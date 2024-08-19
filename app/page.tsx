@@ -32,43 +32,44 @@ export default function About() {
               <p className="mb-8">
                 <a
                   href="mailto:info@jenniferhazard.com" className="block w-full bg-gray-300 text-gray-700 py-4 px-4 rounded text-center hover:bg-gray-400 transition duration-300 font-bold uppercase">
-                    Now Accepting Clients - Email Now
+                    Accepting New Clients<br/>Email Now
                 </a>
               </p>
             </div>
-            <div className="w-full md:w-2/3 text-base leading-relaxed">
-              <h2 className="text-2xl font-bold uppercase mb-4 text-gray-200">Meet Jennifer</h2>
+            <section id="about" className="mt-4 w-full md:w-2/3">
+              <h2 className="text-2xl font-bold uppercase mb-4 text-gray-200">About Me</h2>
               <div>
                 <p className="mb-4">
-                  Jennifer is a Registered Therapeutic Counsellor and graduate of the Orca Institute in British Columbia, Canada. Currently dividing time between London, UK and Vancouver, BC.
+                  I am a Registered Therapeutic Counsellor and graduate of the Orca Institute in British Columbia, Canada. Currently dividing my time between London, UK and Vancouver, BC.
                 </p>
                 <p className="mb-4">
-                  With a foundation in diverse therapeutic techniques she is dedicated to establishing safe, supportive environments for clients. Her intention is to empower others through compassionate communication, tailored treatment planning, and growth-oriented interventions. She embraces collaborative, client-focused approach, fostering individual autonomy and self-efficacy.
+                  With a foundation in diverse therapeutic techniques, I am dedicated to establishing safe, supportive environments for my clients. My intention is to empower others through compassionate communication, tailored treatment planning, and growth-oriented interventions. I embrace a collaborative approach, fostering individual autonomy and promoting self-efficacy.
                 </p>
               </div>
-            </div>
+            </section>
             <section id="about" className="mt-4 w-full md:w-2/3">
               <h2 className="text-2xl font-bold uppercase mb-4 text-gray-200">Therapeutic Approach</h2>
               <p className="mb-4">
-                I have a warm, client-centered approach to therapy. In my sessions, I focus on the body-mind connection, self-compassion, mindfulness, redirecting and reframing thoughts, identifying and breaking patterns, and providing goal-directed tools and resources. First and foremost, I believe the relationship between client and counselor is critical. Beginning from a strong foundation of trust is the most successful path forwards.
+                I have a warm, client-centered therapeutic technique. In my sessions, I focus on the body-mind connection, self-compassion, mindfulness, pattern identification, and providing you with goal-directed tools and resources. First and foremost, I believe the relationship between client and counselor is critical. Beginning from a strong foundation of trust sets the most successful path forwards.
               </p>
             </section>
             <section className="mt-4 w-full md:w-2/3">
               <h2 className="text-2xl font-bold uppercase mb-4 text-gray-200">Counselling Philosophy</h2>
               <p className="mb-4">
-                I embrace a philosophy of dynamic human experience, with consideration and respect for the nuance of individualism. I believe that we have the power to transform our lives and outlook using our own pain and self awareness as mechanisms for change. I see suffering as an opportunity to grow and that our potential to do so is only limited by our thoughts and habits - all malleable through honesty and willingness.
+                I embrace a philosophy of dynamic human experience, with respect for the nuance of individualism. I believe that we have the power to transform our lives and outlook using our own pain and self awareness as mechanisms for change. I see suffering as an opportunity to grow and believe that our potential to do so is only limited by our thoughts and habits - all of which are malleable.
               </p>
               <p className="mb-4">
-                I believe that fulfillment can be found by engaging in meaningful work, healthy relationships, achieving a sense of belonging and through the practice of resilience. I see the meeting of these needs as the antidote to feeling lost, lonely, depressed and anxious. However, I do understand that while these symptoms are present, it can be difficult to navigate a path forward, which is why I am here to help.
+                Fulfillment can be found by engaging in healthy relationships, meaningful work, achieving a sense of belonging and through a practice of resilience. I see the meeting of these as an antidote to feeling lost, lonely, depressed and anxious. However, I do understand that while these symptoms are present, it can be difficult to navigate a path forward, which is why I am here to help.
               </p>
               <p className="mb-4">
-                The world is a heavy place and our bodies are often overwhelmed with thoughts and feelings that have no place to go. I will offer you a safe space to be seen and heard, where you can freely and fully express yourself without fear of judgment. I will offer support and insight and we will work together to identify possibilities of change and find solutions and resources that work for you.
+                The world can be a heavy place and our bodies are often overwhelmed with thoughts and feelings that have no place to go. I offer you a safe space to be seen and heard, where you can freely express yourself without fear of judgment. We will work together to identify possibilities of change and find the tools that work best for you.
               </p>
             </section>
-            <section className="w-full md:w-2/3">
-              <h2 className="text-xl font-bold mb-4 text-gray-200">Specializing In:</h2>
+            <section className="w-full md:w-2/3 mb-4">
+              <h2 className="text-xl font-bold mb-4 text-gray-200">Specialising In:</h2>
               <ul className="list-disc list-inside text-gray-400">
               <li>Identity</li>
+              <li>Stress Management</li>
               <li>Self Esteem</li>
               <li>LGBTQ+</li>
               <li>Trauma</li>
@@ -83,10 +84,10 @@ export default function About() {
             <section className="mt-4 w-full md:w-2/3">
               <h2 className="text-2xl font-bold uppercase mb-4 text-gray-200">What to Expect</h2>
               <p className="mb-4">
-                We will meet online, via Zoom. I will send you a link prior to our session and all you will have to do is click the link and make sure your camera and microphone are working.
+                We will meet online, via Zoom. I will send you a link prior to our session and all you have to do is click the link and make sure your camera and microphone are working.
               </p>
               <p className="mb-4">
-                Our time together will be a collaborative journey. Initially, the most important part will be establishing a trusting relationship. So at the beginning, we will spend time connecting and you can begin to share your story with me. Here, we will start to figure out what some of the best ways of working together will look like. It is important that we are a good fit for you and your healing journey.
+                Our time together will be a collaborative journey. Initially, the most important part will be establishing a trusting relationship. We must be a good fit for you and your healing journey.
               </p>
             </section>
             <section className="mt-4 w-full md:w-2/3">
@@ -99,25 +100,25 @@ export default function About() {
                   />
                 </div>
               </div>
+              <p className="mt-4">
+                <i>The first step in a new direction is often the hardest, but the one that can change everything.</i>
+              </p>
             </section>
             <section id="contact" className="mt-8 w-full md:w-2/3">
               <h2 className="text-2xl font-bold uppercase mb-4 text-gray-200">Contact Me</h2>
               <p className="mb-4">
-                <i>The first step in a new direction is often the hardest, but the one that can change everything.</i>
+                My services are online, confidential, and secure.
               </p>
-              <p className="mb-4">
-                My services are online, fully private, confidential & secure.
-              </p>
-              <p className="mb-4">
-                <li>Book <b>a free 20-minute phone consult</b> to see if we&apos;re a good fit.</li>
-                <li>Book <b>a 50-minute video session</b> for <b>£50</b> (UK clients) or <b>$90 CAD</b> (Canadian clients).</li>
-              </p>
+              <ul className="mb-4 list-disc list-inside space-y-1">
+                <li><b>Free 15-minute phone consults</b> available to see if we&apos;re a good fit.</li>
+                <li><b>50-minute video sessions</b> available for <b>£50</b> (UK clients) or <b>$90 CAD</b> (Canadian clients).</li>
+              </ul>
             </section>
             <section id="contact" className="mt-8 w-full md:w-2/3">
               <p className="mb-4">
                 <a
                   href="mailto:info@jenniferhazard.com" className="block w-full bg-gray-300 text-gray-700 py-4 px-4 rounded text-center hover:bg-gray-400 transition duration-300 font-bold uppercase">
-                    Please Email Me To Schedule
+                    Email Now To Book
                 </a>
               </p>
             </section>
