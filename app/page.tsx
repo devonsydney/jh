@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from './components/Footer';
+import Image from 'next/image';
 
 export default function About() {
   return (
@@ -108,7 +109,7 @@ export default function About() {
                 My services are online, fully private, confidential & secure.
               </p>
               <p className="mb-4">
-                <li>Book <b>a free 20-minute phone consult</b> to see if we're a good fit.</li>
+                <li>Book <b>a free 20-minute phone consult</b> to see if we&apos;re a good fit.</li>
                 <li>Book <b>a 50-minute video session</b> for <b>£50</b> (UK clients) or <b>$90 CAD</b> (Canadian clients).</li>
               </p>
             </section>
