@@ -7,32 +7,27 @@ export default function About() {
     <>
       <main className="flex min-h-screen flex-col items-center justify-center p-8 bg-gray-900">
         <div className="bg-gray-800 text-gray-200 min-h-screen shadow-lg rounded-lg overflow-hidden">
-          <header className="bg-gray-700 py-6">
-            <h1 className="text-4xl font-bold text-center text-white uppercase">Jennifer Hazard</h1>
-            <p className="text-lg text-center text-gray-300 uppercase">Online Therapeutic Counselling</p>
-            <p className="text-center">
-              <a href="mailto:info@jenniferhazard.com" className="text-gray-300 hover:text-white transition duration-300">
-                info@jenniferhazard.com
-              </a>
-            </p>
-          </header>
-          <div className="flex justify-center">
-            <div className="w-full md:w-3/4">
-              <div className="relative">
-                <img
-                  src="/images/jennifer_hero.jpg"
-                  alt="Jennifer Hazard"
-                  className="w-full h-full object-cover shadow-lg"
-                />
+          <header className="py-6 w-full">
+            <div className="container mx-auto">
+              <div className="flex justify-center">
+                <div className="w-1/3">
+                  <Image
+                    src="/images/jennifer_logo_wordmark_white_1563_923.png"
+                    alt="Jennifer Hazard"
+                    width={1563}
+                    height={923}
+                    className="object-cover object-center"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <main className="flex flex-col items-center justify-center p-8">
+          </header>
+          <main className="flex flex-col items-center justify-center">
             <div className="w-full md:w-2/3 text-base leading-relaxed">
               <p className="mb-8">
                 <a
-                  href="mailto:info@jenniferhazard.com" className="block w-full bg-gray-300 text-gray-700 py-4 px-4 rounded text-center hover:bg-gray-400 transition duration-300 font-bold uppercase">
-                    Accepting New Clients<br/>Email Now
+                  href="mailto:info@jenniferhazard.com" className="block w-full bg-gray-300 text-gray-700 py-4 px-4 rounded text-center hover:bg-gray-400 transition duration-300 font-bold">
+                    Accepting new clients at<br/>info@jenniferhazard.com
                 </a>
               </p>
             </div>
