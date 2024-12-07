@@ -61,7 +61,7 @@ export default function About() {
                 I use a client-centred therapeutic technique that encourages curiosity and exploration, processing of emotions, pattern identification, self-compassion and mindfulness. Together, we will uncover personalized tools and resources to assist you in reaching your goals.
               </p>
               <p className="mb-4">
-                First and foremost, a strong foundation of trust between client and counsellor allows the most successful path forwards. <b>So let's start there...</b>
+                First and foremost, a strong foundation of trust between client and counsellor allows the most successful path forwards. <b>So let&apos;s start there...</b>
               </p>
             </section>
             <section className="w-full md:w-2/3 mb-4">
@@ -108,7 +108,7 @@ export default function About() {
                 My services are online, confidential, and secure.
               </p>
               <ul className="mb-4 list-disc list-inside space-y-1">
-                <li><b>Free 15-minute phone consults</b> available by appointment to see if we're a good fit.</li>
+                <li><b>Free 15-minute phone consults</b> available by appointment to see if we&apos;re a good fit.</li>
                 <li><b>50-minute Zoom video sessions</b> for <b>£50</b> (UK clients) or <b>$90 CAD</b> (Canadian clients).</li>
               </ul>
             </section>
