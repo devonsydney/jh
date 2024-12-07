@@ -5,8 +5,8 @@ import Image from 'next/image';
 export default function About() {
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-center p-8 bg-gray-900">
-        <div className="bg-gray-800 text-gray-200 min-h-screen shadow-lg rounded-lg overflow-hidden">
+      <main className="flex flex-col items-center justify-center p-8 bg-gray-900 md:bg-gray-800">
+        <div className="bg-gray-900 text-gray-200 rounded-lg overflow-hidden md:shadow-lg">
           <header className="py-6 w-full">
             <div className="container mx-auto">
               <div className="flex justify-center">
@@ -26,8 +26,12 @@ export default function About() {
             <div className="w-full md:w-2/3 text-base leading-relaxed">
               <p className="mb-8">
                 <a
-                  href="mailto:info@jenniferhazard.com" className="block w-full bg-gray-300 text-gray-700 py-4 px-4 rounded text-center hover:bg-gray-400 transition duration-300 font-bold">
-                    Accepting new clients at<br/>info@jenniferhazard.com
+                  href="mailto:info@jenniferhazard.com" 
+                  className="block w-full bg-gray-300 text-gray-700 py-1.5 px-4 rounded text-center 
+                    hover:bg-gray-400 hover:-translate-y-0.5 hover:shadow-lg
+                    transition-all duration-300 
+                    font-bold shadow-md">
+                    ✉️ Accepting new clients at<br/>info@jenniferhazard.com
                 </a>
               </p>
             </div>
@@ -108,11 +112,15 @@ export default function About() {
                 <li><b>50-minute Zoom video sessions</b> for <b>£50</b> (UK clients) or <b>$90 CAD</b> (Canadian clients).</li>
               </ul>
             </section>
-            <section id="contact" className="mt-8 w-full md:w-2/3">
-              <p className="mb-4">
+            <section id="contact" className="mt-4 w-full md:w-2/3">
+              <p className="mb-8">
                 <a
-                  href="mailto:info@jenniferhazard.com" className="block w-full bg-gray-300 text-gray-700 py-4 px-4 rounded text-center hover:bg-gray-400 transition duration-300 font-bold uppercase">
-                    Email Now To Book
+                  href="mailto:info@jenniferhazard.com" 
+                  className="block w-full bg-gray-300 text-gray-700 py-2 px-4 rounded text-center 
+                    hover:bg-gray-400 hover:-translate-y-0.5 hover:shadow-lg
+                    transition-all duration-300 
+                    font-bold shadow-md">
+                    ✉️ Email Now To Book
                 </a>
               </p>
             </section>
