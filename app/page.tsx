@@ -97,10 +97,12 @@ export default function About() {
             <section className="mt-4 w-full md:w-2/3">
               <div className="w-full md:w-2/3">
                 <div className="aspect-w-3 aspect-h-4 relative">
-                  <img
+                  <Image
                     src="/images/jennifer_contact.png"
                     alt="Jennifer Hazard"
-                    className="w-full h-full object-cover rounded-lg shadow-lg"
+                    width={2048}  // adjust these dimensions to match your image's actual size
+                    height={1363}
+                    className="object-cover rounded-lg shadow-lg"
                   />
                 </div>
               </div>
