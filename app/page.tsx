@@ -27,11 +27,11 @@ export default function About() {
               <p className="mb-4">
                 <a
                   href="mailto:info@jenniferhazard.com" 
-                  className="block w-full bg-gray-300 text-gray-700 py-1.5 px-4 rounded text-center 
+                  className="block w-4/5 mx-auto bg-gray-300 text-gray-700 py-1.5 px-3 rounded text-center 
                     hover:bg-gray-400 hover:-translate-y-0.5 hover:shadow-lg
                     transition-all duration-300 
                     font-bold shadow-md">
-                    ✉️ Accepting new clients at<br/>info@jenniferhazard.com
+                    ✉️ Accepting new clients at info@jenniferhazard.com
                 </a>
               </p>
             </div>
@@ -113,10 +113,10 @@ export default function About() {
               </ul>
             </section>
             <section id="contact" className="mt-4 w-full md:w-2/3">
-              <p className="mb-8">
+              <p className="mb-0 md:mb-8">
                 <a
                   href="mailto:info@jenniferhazard.com" 
-                  className="block w-full bg-gray-300 text-gray-700 py-2 px-4 rounded text-center 
+                  className="block w-4/5 mx-auto bg-gray-300 text-gray-700 py-2 px-3 rounded text-center 
                     hover:bg-gray-400 hover:-translate-y-0.5 hover:shadow-lg
                     transition-all duration-300 
                     font-bold shadow-md">
