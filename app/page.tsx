@@ -12,9 +12,9 @@ export default function About() {
               <div className="flex justify-center">
                 <div className="w-full px-4 md:w-2/3 lg:w-1/3">
                   <Image
-                    src="/images/jennifer_logo_wordmark_white_1563_923.png"
+                    src="/images/jennifer_logo_wordmark_white_1154_923.png"
                     alt="Jennifer Hazard"
-                    width={1563}
+                    width={1154}
                     height={923}
                     className="object-contain object-center w-full"
                   />
@@ -24,7 +24,7 @@ export default function About() {
           </header>
           <main className="flex flex-col items-center justify-center">
             <div className="w-full md:w-2/3 text-base leading-relaxed">
-              <p className="mb-8">
+              <p className="mb-4">
                 <a
                   href="mailto:info@jenniferhazard.com" 
                   className="block w-full bg-gray-300 text-gray-700 py-1.5 px-4 rounded text-center 
