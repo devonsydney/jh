@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from './components/Footer';
 import Image from 'next/image';
+import { EnvelopeIcon } from '@heroicons/react/24/outline'
 
 export default function About() {
   return (
@@ -31,7 +32,8 @@ export default function About() {
                     hover:bg-gray-400 hover:-translate-y-0.5 hover:shadow-lg
                     transition-all duration-300 
                     font-bold shadow-md">
-                    ✉️ Accepting new clients at<br/>info@jenniferhazard.com
+                    <EnvelopeIcon className="w-5 h-5 inline-block mr-2 -mt-1 text-gray-700"/>
+                    Accepting new clients at<br/>info@jenniferhazard.com
                 </a>
               </p>
             </div>
@@ -66,18 +68,22 @@ export default function About() {
             </section>
             <section className="w-full md:w-2/3 mb-4">
               <h2 className="text-xl font-bold mb-4 text-gray-200">Specialising In:</h2>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-0.5 text-gray-400">
-                <li className="flex items-center before:content-['•'] before:mr-2">Relationships</li>
-                <li className="flex items-center before:content-['•'] before:mr-2">Non-Monogamy</li>
-                <li className="flex items-center before:content-['•'] before:mr-2">Self Esteem</li>
-                <li className="flex items-center before:content-['•'] before:mr-2">Identity</li>
-                <li className="flex items-center before:content-['•'] before:mr-2">LGBTQ+</li>
-                <li className="flex items-center before:content-['•'] before:mr-2">Grief & Loss</li>
-                <li className="flex items-center before:content-['•'] before:mr-2">Anxiety</li>
-                <li className="flex items-center before:content-['•'] before:mr-2">Depression</li>
-                <li className="flex items-center before:content-['•'] before:mr-2">Stress Management</li>
-                <li className="flex items-center before:content-['•'] before:mr-2">Crisis</li>
-              </ul>
+              <div className="flex gap-x-4">
+                <ul className="w-1/2 space-y-0.5 text-gray-400">
+                  <li className="flex items-center before:content-['•'] before:mr-2">Relationships</li>
+                  <li className="flex items-center before:content-['•'] before:mr-2">Non-Monogamy</li>
+                  <li className="flex items-center before:content-['•'] before:mr-2">Self Esteem</li>
+                  <li className="flex items-center before:content-['•'] before:mr-2">Identity</li>
+                  <li className="flex items-center before:content-['•'] before:mr-2">LGBTQ+</li>
+                </ul>
+                <ul className="w-1/2 space-y-0.5 text-gray-400">                
+                  <li className="flex items-center before:content-['•'] before:mr-2">Grief & Loss</li>
+                  <li className="flex items-center before:content-['•'] before:mr-2">Anxiety</li>
+                  <li className="flex items-center before:content-['•'] before:mr-2">Depression</li>
+                  <li className="flex items-center before:content-['•'] before:mr-2">Stress Management</li>
+                  <li className="flex items-center before:content-['•'] before:mr-2">Crisis</li>
+                </ul>
+              </div>
             </section>
             <section className="mt-4 w-full md:w-2/3">
               <h2 className="text-2xl font-bold uppercase mb-4 text-gray-200">What to Expect</h2>
@@ -120,7 +126,8 @@ export default function About() {
                     hover:bg-gray-400 hover:-translate-y-0.5 hover:shadow-lg
                     transition-all duration-300 
                     font-bold shadow-md">
-                    ✉️ Email Now To Book
+                    <EnvelopeIcon className="w-5 h-5 inline-block mr-2 -mt-1 text-gray-700"/>
+                    Email Now To Book
                 </a>
               </p>
             </section>
