@@ -8,7 +8,7 @@ export default function About() {
     <>
       <main className="flex flex-col items-center justify-center p-8 bg-gray-900 md:bg-gray-800">
         <div className="bg-gray-900 text-gray-200 rounded-lg overflow-hidden md:shadow-lg">
-          <header className="py-6 w-full">
+          <header className="pt-0 pb-6 md:pt-6 md:pb-6 w-full">
             <div className="container mx-auto">
               <div className="flex justify-center">
                 <div className="w-full px-4 md:w-2/3 lg:w-1/3">
@@ -100,7 +100,7 @@ export default function About() {
                   <Image
                     src="/images/jennifer_contact.png"
                     alt="Jennifer Hazard"
-                    width={2048}  // adjust these dimensions to match your image's actual size
+                    width={2048}
                     height={1363}
                     className="object-cover rounded-lg shadow-lg"
                   />
