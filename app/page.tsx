@@ -31,7 +31,7 @@ export default function About() {
                     hover:bg-gray-400 hover:-translate-y-0.5 hover:shadow-lg
                     transition-all duration-300 
                     font-bold shadow-md">
-                    ✉️ Accepting new clients at info@jenniferhazard.com
+                    ✉️ Accepting new clients at<br/>info@jenniferhazard.com
                 </a>
               </p>
             </div>
