@@ -10,13 +10,13 @@ export default function About() {
           <header className="py-6 w-full">
             <div className="container mx-auto">
               <div className="flex justify-center">
-                <div className="w-full px-4 md:w-1/3">
+                <div className="w-full px-4 md:w-2/3 lg:w-1/3">
                   <Image
                     src="/images/jennifer_logo_wordmark_white_1563_923.png"
                     alt="Jennifer Hazard"
                     width={1563}
                     height={923}
-                    className="object-cover object-center"
+                    className="object-contain object-center w-full"
                   />
                 </div>
               </div>
