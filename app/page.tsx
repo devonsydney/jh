@@ -8,35 +8,48 @@ export default function About() {
   const [showGBP, setShowGBP] = useState(false);
   useEffect(() => {
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    // Definitive timezone checks - if these match, we don't need the API
-    if (timezone.startsWith('America/')) {
-      setShowGBP(false);
-      return; // Exit early, no API call
-    }
+    console.log('Initial timezone detection:', timezone);
+    
+    // Immediately set based on timezone
     if (timezone.startsWith('Europe/')) {
+      console.log('European timezone detected - setting GBP');
       setShowGBP(true);
-      return; // Exit early, no API call
+    } else {
+      console.log('Non-European timezone detected - setting CAD');
+      setShowGBP(false);
     }
-    // Only for non-America, non-Europe timezones, default to CAD and then verify with API
-    setShowGBP(false);  // Default to CAD for unknown regions
-    // Optional API verification for other regions
+
+    // Skip API call entirely for clear non-European regions
+    if (timezone.match(/^(America|Asia|Africa|Australia|Pacific)\//)) {
+      console.log('Known non-European continent detected - skipping API call');
+      return;
+    }
+
+    // Only proceed with API call for ambiguous cases
+    console.log('Proceeding with API verification...');
     fetch('https://ipapi.co/json/')
-      .then(res => res.json())
-      .then(data => {
+      .then(async (res) => {
+        const data = await res.json();
+        console.log('Full API response:', data);
+        
         const europeanCountries = [
           'GB', 'AD', 'AL', 'AT', 'BA', 'BE', 'BG', 'BY', 'CH', 'CY', 'CZ',
           'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GR', 'HR', 'HU', 'IE', 'IS',
           'IT', 'LI', 'LT', 'LU', 'LV', 'MC', 'MD', 'ME', 'MK', 'MT', 'NL',
-          'NO', 'PL', 'PT', 'RO', 'RS', 'RU', 'SE', 'SI', 'SK', 'SM', 'UA', 'VA'
+          'NO', 'PL', 'PT', 'RO', 'RS', 'SE', 'SI', 'SK', 'SM', 'UA', 'VA'
         ];
-        // Only update if it's a European country
+        
+        console.log(`Country code from API: ${data.country}`);
+        console.log(`Is European: ${europeanCountries.includes(data.country)}`);
+
+        // Only allow API to set GBP, never override to CAD
         if (europeanCountries.includes(data.country)) {
+          console.log('European country confirmed via API - setting GBP');
           setShowGBP(true);
         }
       })
       .catch(err => {
-        console.error('Error detecting region:', err);
-        // On error, stick with the timezone-based decision
+        console.error('API Error:', err);
       });
   }, []);
   return (
