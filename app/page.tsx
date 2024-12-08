@@ -8,17 +8,18 @@ export default function About() {
   const [showGBP, setShowGBP] = useState(false);
   useEffect(() => {
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    // Quick check for North America first
+    // Definitive timezone checks - if these match, we don't need the API
     if (timezone.startsWith('America/')) {
       setShowGBP(false);
-      return; // Exit early, no need to call API
+      return; // Exit early, no API call
     }
-    // Check if explicitly in Europe
     if (timezone.startsWith('Europe/')) {
       setShowGBP(true);
-      return; // Exit early, no need to call API
+      return; // Exit early, no API call
     }
-    // Only call API for ambiguous timezones
+    // Only for non-America, non-Europe timezones, default to CAD and then verify with API
+    setShowGBP(false);  // Default to CAD for unknown regions
+    // Optional API verification for other regions
     fetch('https://ipapi.co/json/')
       .then(res => res.json())
       .then(data => {
@@ -28,12 +29,14 @@ export default function About() {
           'IT', 'LI', 'LT', 'LU', 'LV', 'MC', 'MD', 'ME', 'MK', 'MT', 'NL',
           'NO', 'PL', 'PT', 'RO', 'RS', 'RU', 'SE', 'SI', 'SK', 'SM', 'UA', 'VA'
         ];
-        setShowGBP(europeanCountries.includes(data.country));
+        // Only update if it's a European country
+        if (europeanCountries.includes(data.country)) {
+          setShowGBP(true);
+        }
       })
       .catch(err => {
         console.error('Error detecting region:', err);
-        // On error, fallback to timezone-based decision
-        setShowGBP(timezone.startsWith('Europe/'));
+        // On error, stick with the timezone-based decision
       });
   }, []);
   return (
