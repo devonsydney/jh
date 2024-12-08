@@ -1,9 +1,41 @@
-import React from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import Footer from './components/Footer';
 import Image from 'next/image';
 import { EnvelopeIcon } from '@heroicons/react/24/outline'
 
 export default function About() {
+  const [showGBP, setShowGBP] = useState(false);
+  useEffect(() => {
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    // Quick check for North America first
+    if (timezone.startsWith('America/')) {
+      setShowGBP(false);
+      return; // Exit early, no need to call API
+    }
+    // Check if explicitly in Europe
+    if (timezone.startsWith('Europe/')) {
+      setShowGBP(true);
+      return; // Exit early, no need to call API
+    }
+    // Only call API for ambiguous timezones
+    fetch('https://ipapi.co/json/')
+      .then(res => res.json())
+      .then(data => {
+        const europeanCountries = [
+          'GB', 'AD', 'AL', 'AT', 'BA', 'BE', 'BG', 'BY', 'CH', 'CY', 'CZ',
+          'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GR', 'HR', 'HU', 'IE', 'IS',
+          'IT', 'LI', 'LT', 'LU', 'LV', 'MC', 'MD', 'ME', 'MK', 'MT', 'NL',
+          'NO', 'PL', 'PT', 'RO', 'RS', 'RU', 'SE', 'SI', 'SK', 'SM', 'UA', 'VA'
+        ];
+        setShowGBP(europeanCountries.includes(data.country));
+      })
+      .catch(err => {
+        console.error('Error detecting region:', err);
+        // On error, fallback to timezone-based decision
+        setShowGBP(timezone.startsWith('Europe/'));
+      });
+  }, []);
   return (
     <>
       <main className="flex flex-col items-center justify-center p-8 bg-gray-900 md:bg-gray-800">
@@ -41,7 +73,7 @@ export default function About() {
               <h2 className="text-2xl font-bold uppercase mb-4 text-gray-200">About Me</h2>
               <div>
                 <p className="mb-4">
-                  I am a Registered Therapeutic Counsellor and graduate of the Orca Institute in British Columbia, Canada. Currently dividing my time between London, UK and Vancouver, BC. Before finding my way back to counselling, I obtained a degree in Communications and have worked for over a decade as a professional caregiver.
+                  I am a Registered Therapeutic Counsellor and graduate of the Orca Institute in British Columbia, Canada. Before finding my way back to counselling, I obtained a degree in Communications and have worked for over a decade as a professional caregiver.
                 </p>
                 <p className="mb-4">
                   My presence is genuine and warm. Above all, I am dedicated to creating a safe and supportive environment for my clients. My intention is to empower through compassionate exploration, individualized treatment plans, and growth-oriented interventions. I embrace a collaborative approach, promoting self-efficacy and autonomy.
@@ -117,7 +149,7 @@ export default function About() {
               </p>
               <ul className="mb-4 list-disc list-inside space-y-1">
                 <li><b>Free 15-minute phone consults</b> available by appointment to see if we&apos;re a good fit.</li>
-                <li><b>50-minute Zoom video sessions</b> for <b>£50</b> (UK clients) or <b>$90 CAD</b> (Canadian clients).</li>
+                <li><b>50-minute Zoom video sessions</b> for {showGBP ? <b>£50</b> : <b>$90 CAD</b>}.</li>
               </ul>
             </section>
             <section id="contact" className="mt-4 w-full md:w-2/3">
