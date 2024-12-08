@@ -9,11 +9,12 @@ export default function About() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Try IP detection first
     fetch('https://ipapi.co/json/')
       .then(async (res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
         const data = await res.json();
-        console.log('Location detected:', data);
         
         const europeanCountries = [
           'GB', 'AD', 'AL', 'AT', 'BA', 'BE', 'BG', 'BY', 'CH', 'CY', 'CZ',
@@ -26,14 +27,16 @@ export default function About() {
         setIsLoading(false);
       })
       .catch(err => {
-        // If API fails, fall back to timezone check
-        console.error('API Error, falling back to timezone check:', err);
         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        console.log('Fallback timezone:', timezone);
-        setShowGBP(timezone.startsWith('Europe/'));
+        if (timezone.startsWith('Europe/')) {
+          setShowGBP(true);
+        } else {
+          setShowGBP(false);
+        }
         setIsLoading(false);
       });
   }, []);
+  
   return (
     <>
       <main className="flex flex-col items-center justify-center p-8 bg-gray-900 md:bg-gray-800">
