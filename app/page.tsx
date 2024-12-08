@@ -36,7 +36,7 @@ export default function About() {
         setIsLoading(false);
       });
   }, []);
-  
+
   return (
     <>
       <main className="flex flex-col items-center justify-center p-8 bg-gray-900 md:bg-gray-800">
@@ -155,7 +155,7 @@ export default function About() {
                   {isLoading ? (
                     <span className="inline-block w-16">...</span>
                   ) : (
-                    <b>{showGBP ? '£50' : '$90 CAD'}</b>
+                    <b>{showGBP ? '£50' : '$90 CAD'}</b>.
                   )}
                 </li>
               </ul>
