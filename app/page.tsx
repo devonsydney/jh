@@ -6,31 +6,14 @@ import { EnvelopeIcon } from '@heroicons/react/24/outline'
 
 export default function About() {
   const [showGBP, setShowGBP] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    console.log('Initial timezone detection:', timezone);
-    
-    // Immediately set based on timezone
-    if (timezone.startsWith('Europe/')) {
-      console.log('European timezone detected - setting GBP');
-      setShowGBP(true);
-    } else {
-      console.log('Non-European timezone detected - setting CAD');
-      setShowGBP(false);
-    }
-
-    // Skip API call entirely for clear non-European regions
-    if (timezone.match(/^(America|Asia|Africa|Australia|Pacific)\//)) {
-      console.log('Known non-European continent detected - skipping API call');
-      return;
-    }
-
-    // Only proceed with API call for ambiguous cases
-    console.log('Proceeding with API verification...');
+    // Try IP detection first
     fetch('https://ipapi.co/json/')
       .then(async (res) => {
         const data = await res.json();
-        console.log('Full API response:', data);
+        console.log('Location detected:', data);
         
         const europeanCountries = [
           'GB', 'AD', 'AL', 'AT', 'BA', 'BE', 'BG', 'BY', 'CH', 'CY', 'CZ',
@@ -39,17 +22,16 @@ export default function About() {
           'NO', 'PL', 'PT', 'RO', 'RS', 'SE', 'SI', 'SK', 'SM', 'UA', 'VA'
         ];
         
-        console.log(`Country code from API: ${data.country}`);
-        console.log(`Is European: ${europeanCountries.includes(data.country)}`);
-
-        // Only allow API to set GBP, never override to CAD
-        if (europeanCountries.includes(data.country)) {
-          console.log('European country confirmed via API - setting GBP');
-          setShowGBP(true);
-        }
+        setShowGBP(europeanCountries.includes(data.country));
+        setIsLoading(false);
       })
       .catch(err => {
-        console.error('API Error:', err);
+        // If API fails, fall back to timezone check
+        console.error('API Error, falling back to timezone check:', err);
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        console.log('Fallback timezone:', timezone);
+        setShowGBP(timezone.startsWith('Europe/'));
+        setIsLoading(false);
       });
   }, []);
   return (
@@ -165,7 +147,14 @@ export default function About() {
               </p>
               <ul className="mb-4 list-disc list-inside space-y-1">
                 <li><b>Free 15-minute phone consults</b> available by appointment to see if we&apos;re a good fit.</li>
-                <li><b>50-minute Zoom video sessions</b> for {showGBP ? <b>£50</b> : <b>$90 CAD</b>}.</li>
+                <li>
+                  <b>50-minute Zoom video sessions</b> for{' '}
+                  {isLoading ? (
+                    <span className="inline-block w-16">...</span>
+                  ) : (
+                    <b>{showGBP ? '£50' : '$90 CAD'}</b>
+                  )}
+                </li>
               </ul>
             </section>
             <section id="contact" className="mt-4 w-full md:w-2/3">
