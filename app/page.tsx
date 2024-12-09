@@ -5,8 +5,14 @@ import Image from 'next/image';
 import { EnvelopeIcon } from '@heroicons/react/24/outline'
 
 export default function About() {
-  const [showGBP, setShowGBP] = useState(false);
+  const [isUK, setIsUK] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const getRegionalText = (text: string) => {
+    if (!isLoading && isUK) {
+      return text.replace(/ized/g, 'ised');
+    }
+    return text;
+  };
 
   useEffect(() => {
     fetch('https://ipapi.co/json/')
@@ -23,15 +29,15 @@ export default function About() {
           'NO', 'PL', 'PT', 'RO', 'RS', 'SE', 'SI', 'SK', 'SM', 'UA', 'VA'
         ];
         
-        setShowGBP(europeanCountries.includes(data.country));
+        setIsUK(europeanCountries.includes(data.country));
         setIsLoading(false);
       })
       .catch(err => {
         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         if (timezone.startsWith('Europe/')) {
-          setShowGBP(true);
+          setIsUK(true);
         } else {
-          setShowGBP(false);
+          setIsUK(false);
         }
         setIsLoading(false);
       });
@@ -74,10 +80,10 @@ export default function About() {
               <h2 className="text-2xl font-bold uppercase mb-4 text-gray-200">About Me</h2>
               <div>
                 <p className="mb-4">
-                  I am a Registered Therapeutic Counsellor and graduate of the Orca Institute in British Columbia, Canada. Before finding my way back to counselling, I obtained a degree in Communications and have worked for over a decade as a professional caregiver.
+                I am a {isLoading ? "Registered Therapeutic Counsellor" : (isUK ? "Counsellor based in London, UK" : "Registered Therapeutic Counsellor")} and graduate of the Orca Institute in British Columbia, Canada. Before finding my way back to counselling, I obtained a degree in Communications and have worked for over a decade as a professional caregiver.
                 </p>
                 <p className="mb-4">
-                  My presence is genuine and warm. Above all, I am dedicated to creating a safe and supportive environment for my clients. My intention is to empower through compassionate exploration, individualized treatment plans, and growth-oriented interventions. I embrace a collaborative approach, promoting self-efficacy and autonomy.
+                  My presence is genuine and warm. Above all, I am dedicated to creating a safe and supportive environment for my clients. My intention is to empower through compassionate exploration, {getRegionalText("individualized")} treatment plans, and growth-oriented interventions. I embrace a collaborative approach, promoting self-efficacy and autonomy.
                 </p>
               </div>
             </section>
@@ -93,7 +99,7 @@ export default function About() {
                 The world can be a heavy place and we are often overwhelmed with thoughts and feelings that have no place to go. I offer you a safe space to be seen and heard, where you can freely express yourself without fear of judgment.
               </p>
               <p className="mb-4">
-                I use a client-centred therapeutic technique that encourages curiosity and exploration, processing of emotions, pattern identification, self-compassion and mindfulness. Together, we will uncover personalized tools and resources to assist you in reaching your goals.
+                I use a client-centred therapeutic technique that encourages curiosity and exploration, processing of emotions, pattern identification, self-compassion and mindfulness. Together, we will uncover {getRegionalText("personalized")} tools and resources to assist you in reaching your goals.
               </p>
               <p className="mb-4">
                 First and foremost, a strong foundation of trust between client and counsellor allows the most successful path forwards. <b>So let&apos;s start there...</b>
@@ -155,7 +161,7 @@ export default function About() {
                   {isLoading ? (
                     <span className="inline-block w-16">...</span>
                   ) : (
-                    <><b>{showGBP ? '£50' : '$90 CAD'}</b>.</>
+                    <><b>{isUK ? '£50' : '$90 CAD'}</b>.</>
                   )}
                 </li>
               </ul>
