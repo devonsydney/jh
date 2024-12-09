@@ -76,17 +76,6 @@ export default function About() {
                 </a>
               </p>
             </div>
-            <section id="about" className="mt-4 w-full md:w-2/3">
-              <h2 className="text-2xl font-bold uppercase mb-4 text-gray-200">About Me</h2>
-              <div>
-                <p className="mb-4">
-                I am a {isLoading ? "Registered Therapeutic Counsellor" : (isUK ? "Counsellor based in London, UK" : "Registered Therapeutic Counsellor")} and graduate of the Orca Institute in British Columbia, Canada. Before finding my way back to counselling, I obtained a degree in Communications and have worked for over a decade as a professional caregiver.
-                </p>
-                <p className="mb-4">
-                  My presence is genuine and warm. Above all, I am dedicated to creating a safe and supportive environment for my clients. My intention is to empower through compassionate exploration, {getRegionalText("individualized")} treatment plans, and growth-oriented interventions. I embrace a collaborative approach, promoting self-efficacy and autonomy.
-                </p>
-              </div>
-            </section>
             <section className="mt-4 w-full md:w-2/3">
               <h2 className="text-2xl font-bold uppercase mb-4 text-gray-200">Counselling Philosophy</h2>
               <p className="mb-4">
@@ -102,7 +91,7 @@ export default function About() {
                 I use a client-centred therapeutic technique that encourages curiosity and exploration, processing of emotions, pattern identification, self-compassion and mindfulness. Together, we will uncover {getRegionalText("personalized")} tools and resources to assist you in reaching your goals.
               </p>
               <p className="mb-4">
-                First and foremost, a strong foundation of trust between client and counsellor allows the most successful path forwards. <b>So let&apos;s start there...</b>
+                First and foremost, a strong foundation of trust between client and counsellor allows the most successful path forwards. <b>So let&apos;s start there.</b>
               </p>
             </section>
             <section className="w-full md:w-2/3 mb-4">
@@ -132,6 +121,17 @@ export default function About() {
               <p className="mb-4">
                 I offer a free 15-minute phone consultation to get to know each other and decide if we are a good fit before booking a full session.
               </p>
+            </section>
+            <section id="about" className="mt-4 w-full md:w-2/3">
+              <h2 className="text-2xl font-bold uppercase mb-4 text-gray-200">About Me</h2>
+              <div>
+                <p className="mb-4">
+                I am a {isLoading ? "Registered Therapeutic Counsellor" : (isUK ? "Counsellor based in London, UK" : "Registered Therapeutic Counsellor")} and graduate of the Orca Institute in British Columbia, Canada. Before finding my way back to counselling, I obtained a degree in Communications and have worked for over a decade as a professional caregiver.
+                </p>
+                <p className="mb-4">
+                  My presence is genuine and warm. Above all, I am dedicated to creating a safe and supportive environment for my clients. My intention is to empower through compassionate exploration, {getRegionalText("individualized")} treatment plans, and growth-oriented interventions. I embrace a collaborative approach, promoting self-efficacy and autonomy.
+                </p>
+              </div>
             </section>
             <section className="mt-4 w-full md:w-2/3">
               <div className="w-full md:w-2/3">
