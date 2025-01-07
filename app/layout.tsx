@@ -9,8 +9,8 @@ const arsenal = Arsenal({
 });
 
 export const metadata: Metadata = {
-  title: "Jennifer Hazard - Online Therapeutic Counselling",
-  description: "Professional counselling services by Jennifer Hazard",
+  title: "Jennifer Hazard RTC | Online Therapeutic Counselling",
+  description: "Professional online counselling services by Jennifer Hazard",
 };
 
 export default function RootLayout({

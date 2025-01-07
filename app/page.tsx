@@ -131,6 +131,9 @@ export default function About() {
                 <p className="mb-4">
                   My presence is genuine and warm. Above all, I am dedicated to creating a safe and supportive environment for my clients. My intention is to empower through compassionate exploration, {getRegionalText("individualized")} treatment plans, and growth-oriented interventions. I embrace a collaborative approach, promoting self-efficacy and autonomy.
                 </p>
+                <p>
+                  I am a Registered Therapeutic Counsellor (RTC) through <b><a href="https://acctcounsellor.com" target="_blank" rel="noopener" className="text-gray-300 hover:text-gray-100 underline">The Association of Cooperative Counselling Therapists of Canada (ACCT)</a></b>. Registration #3614.
+                </p>
               </div>
             </section>
             <section className="mt-4 w-full md:w-2/3">
