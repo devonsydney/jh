@@ -164,9 +164,10 @@ export default function About() {
                   {isLoading ? (
                     <span className="inline-block w-16">...</span>
                   ) : (
-                    <><b>{isUK ? '£50' : '$90 CAD'}</b>.</>
+                    <><b>{isUK ? '£60' : '$110 CAD'}</b>.</>
                   )}
                 </li>
+                <li>A sliding scale rate is available for those in need.</li>
               </ul>
             </section>
             <section id="contact" className="mt-4 w-full md:w-2/3">
